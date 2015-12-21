@@ -6,6 +6,9 @@
         });
     }
     run = function(public){
+        // fix enable scroll
+        $('[scrolling="no"]').attr('scrolling', 'yes');
+        // time and login
         var mod = {
             startTimeHour: '09',
             startTimeMin: '30',
@@ -106,10 +109,10 @@
                 },
                 addLunch: function(){
                     console.log('addLunch');
-                    if($(mod.startEndTime + ' option:selected').val() != '11'){
-                        $(mod.startEndTime).val('11').trigger('change');
+                    if($(mod.startEndTime + ' option:selected').val() != '13'){
+                        $(mod.startEndTime).val('13').trigger('change');
                     }
-                    if($(mod.startEndTime + ' option:selected').val() == '11' || $('span.scrollColContent:contains(' + mod.lunchTxt + ')').length >= 1){
+                    if($(mod.startEndTime + ' option:selected').val() == '13' || $('span.scrollColContent:contains(' + mod.lunchTxt + ')').length >= 1){
                         localStorage.setItem('addLunch', 'false');
                         localStorage.setItem('addLunchTimeValues', 'true');
                     }
